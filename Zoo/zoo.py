@@ -120,9 +120,13 @@ It looks fine!"""
 
 animals = [camel, lion, deer, goose, bat, rabbit]
 
-user_input = input("Please enter the number of the habitat you would like to view: > ")
-print(animals[int(user_input)])
-print("---")
-print("You've reached the end of the program.")
+while True:
+    user_input = input("Please enter the number of the habitat you would like to view: > ")
 
-
+    if user_input == "exit":
+        print("See you later!")
+        break
+    elif user_input.isdigit() and int(user_input) < len(animals):
+        print(animals[int(user_input)])
+    else:
+        print("Invalid input. Try again.")
